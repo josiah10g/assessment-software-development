@@ -18,10 +18,10 @@ Designed for members who are new to software development and prompt engineering.
 - GitHub Student Developer Pack
 - Access to Prompt Engineering learning materials
 
-#### Timeline
+<!-- #### Timeline
 **Duration: 7–8 Days**
 - 5 days: Learning prompt engineering fundamentals
-- 2–3 days: Implementing learned concepts
+- 2–3 days: Implementing learned concepts -->
 
 #### Projects
 Participants will build beginner-friendly projects such as:
@@ -50,11 +50,11 @@ For members with prior development experience who want to integrate prompt engin
 - GitHub Student Developer Pack
 - Access to Prompt Engineering learning materials
 - Strong knowledge of either Frontend or Backend development (preferably both)
-
+<!-- 
 #### Timeline
 **Duration: 5 Days**
 - 3 days: Advanced prompt engineering concepts
-- 2 days: Practical implementation
+- 2 days: Practical implementation -->
 
 #### Projects
 - Build a project using your preferred tech stack, such as:
