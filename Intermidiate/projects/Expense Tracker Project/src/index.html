@@ -1,13 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker Project</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+
+    <h1>Expense Tracker Dashboard</h1>
+
+    <!-- Transaction Form -->
+    <section>
+        <h2>Add Transaction</h2>
+        <form id="transaction-form">
+            <label>
+                Type:
+                <select id="type">
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
+                </select>
+            </label>
+
+            <label>
+                Amount:
+                <input type="number" id="amount" required>
+            </label>
+
+            <label>
+                Category:
+                <input type="text" id="category" required>
+            </label>
+
+            <label>
+                Date:
+                <input type="date" id="date" required>
+            </label>
+
+            <button type="submit">Add Transaction</button>
+        </form>
+    </section>
+
+    <!-- Summary Section -->
+    <section>
+        <h2>Summary</h2>
+        <p>Total Income: <span id="total-income">0</span></p>
+        <p>Total Expenses: <span id="total-expense">0</span></p>
+        <p>Balance: <span id="balance">0</span></p>
+    </section>
+
+    <!-- Transaction List -->
+    <section>
+        <h2>Transactions</h2>
+        <ul id="transaction-list"></ul>
+    </section>
+
     <script src="script.js"></script>
 </body>
 </html>

@@ -76,3 +76,7 @@ Chart.js is used for data visualization because:
 - It is lightweight and easy to integrate
 - It supports pie and bar charts
 - It provides clear visual representation of financial data
+
+## 7. Design Considerations
+- Code is organized to separate structure (HTML), styling (CSS), and behavior (JS).
+- This makes the project easier to maintain, update, and extend.
