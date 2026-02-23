@@ -9,16 +9,14 @@ const balance = document.getElementById('balance');
 let transactions = [];
 
 // Listen for form submission
-form.addEventListener('submit', function(e) {
+form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    // Get values from form
     const type = document.getElementById('type').value;
-    const amount = parseFloat(document.getElementById('amount').value);
+    const amount = Math.abs(parseFloat(document.getElementById('amount').value)); // <-- fix here
     const category = document.getElementById('category').value;
     const date = document.getElementById('date').value;
 
-    // Create transaction object
     const transaction = {
         id: Date.now(),
         type,
@@ -27,22 +25,27 @@ form.addEventListener('submit', function(e) {
         date
     };
 
-    // Add to array
     transactions.push(transaction);
-
-    // Render transactions to UI
     renderTransactions();
-
-    // Reset form
     form.reset();
 });
-
 // Function to display transactions
 function renderTransactions() {
     transactionList.innerHTML = '';
+
     transactions.forEach(t => {
         const li = document.createElement('li');
-        li.textContent = `${t.date} - ${t.type.toUpperCase()} - ${t.category}: $${t.amount}`;
+        li.classList.add(t.type);
+
+        const leftDiv = document.createElement('div');
+        leftDiv.textContent = `${t.date} - ${t.type.toUpperCase()} - ${t.category}`;
+
+        const rightDiv = document.createElement('div');
+        rightDiv.textContent = `$${t.amount.toFixed(2)}`; // <-- add $ here
+
+        li.appendChild(leftDiv);
+        li.appendChild(rightDiv);
+
         transactionList.appendChild(li);
     });
 
@@ -59,7 +62,8 @@ function updateSummary() {
         .filter(t => t.type === 'expense')
         .reduce((sum, t) => sum + t.amount, 0);
 
-    totalIncome.textContent = income;
-    totalExpense.textContent = expense;
-    balance.textContent = income - expense;
+    // Add $ before the numbers
+    totalIncome.textContent = `$${income.toFixed(2)}`;
+    totalExpense.textContent = `$${expense.toFixed(2)}`;
+    balance.textContent = `$${(income - expense).toFixed(2)}`;
 }
